@@ -1,0 +1,7 @@
+[% WRAPPER 'include/layout.tt' %]
+
+<div>
+[% mkdn %]
+</div>
+
+[% END %]
