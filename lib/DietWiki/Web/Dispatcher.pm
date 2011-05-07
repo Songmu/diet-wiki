@@ -3,20 +3,18 @@ use strict;
 use warnings;
 use Amon2::Web::Dispatcher::Lite;
 use File::Spec;
+use Path::Class;
+use Time::Piece;
 use Text::MultiMarkdown qw/markdown/;
 
 any '/' => sub {
     my ($c) = @_;
-    my $mkdn_dir = File::Spec->catdir($c->base_dir, 'tmpl', 'mkdn');
-    opendir my $dh, $mkdn_dir or die "$!:$mkdn_dir";
+    my $mkdn_dir = dir($c->base_dir, 'tmpl', 'mkdn');
     my @entries;
-    while ( my $file = readdir $dh ){
-        next if $file !~ /^[-_0-9a-zA-Z]+\.mkdn$/;
-        my $file_path = File::Spec->catfile($mkdn_dir, $file);
-        next unless -f $file_path;
-        open my $fh,'<:utf8',$file_path or die "$! :cannot open $file_path";
+    for my $file ( sort { $b->stat->mtime <=> $a->stat->mtime } grep { -f $_ && $_ =~ /\.mkdn$/ } $mkdn_dir->children ){
         my $title = 'unknown';
-        while (my $line = <$fh>){
+        my $reader = $file->open('<:utf8');
+        while (my $line = $reader->getline){
             if ( $line =~ /^#/ ){
                 $line =~ s/^[\s#]+//;
                 $line =~ s/[\s#]+$//;
@@ -24,11 +22,12 @@ any '/' => sub {
                 last;
             }
         }
-        my $path = $file;
+        my $path = $file->basename;
         $path =~ s/\.mkdn$//;
         push @entries,{
             title => $title,
             path  => $path,
+            mtime => localtime($file->stat->mtime).'',
         };
     }
     $c->render('index.tt',{

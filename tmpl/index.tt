@@ -3,7 +3,7 @@
 
 <ul class="entries">
 [% FOREACH entry IN entries -%]
-<li><a href="[% entry.path %]">[% entry.title %]</a></li>
+<li><a href="[% entry.path %]">[% entry.title %] ([% entry.mtime %])</a></li>
 [% END -%]
 </ul>
 
