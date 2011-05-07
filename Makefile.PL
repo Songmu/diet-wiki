@@ -13,6 +13,7 @@ requires(
     'HTML::FillInForm::Lite'          => 0,
     'Time::Piece'                     => 0,
     'Text::MultiMarkdown'             => 0,
+    'Path::Class'                     => 0,
 );
 recursive_author_tests('xt');
 
