@@ -2,7 +2,7 @@ use inc::Module::Install;
 all_from "lib/DietWiki.pm";
 
 license 'unknown';
-author  'unknown';
+author  'songmu';
 
 tests 't/*.t t/*/*.t t/*/*/*.t';
 requires(
@@ -12,6 +12,7 @@ requires(
     'Plack::Middleware::ReverseProxy' => 0,
     'HTML::FillInForm::Lite'          => 0,
     'Time::Piece'                     => 0,
+    'Text::MultiMarkdown'             => 0,
 );
 recursive_author_tests('xt');
 
