@@ -14,6 +14,7 @@ requires(
     'Time::Piece'                     => 0,
     'Text::MultiMarkdown'             => 0,
     'Path::Class'                     => 0,
+    'YAML'                            => 0,
 );
 recursive_author_tests('xt');
 
