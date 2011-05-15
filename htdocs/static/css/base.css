@@ -181,17 +181,17 @@ dl.bbs dt{
 
 
 
-section li{
+#main li{
     margin-left: 1.5em;
     padding-left: 0;
 }
-section ul > li{
+#main ul > li{
     list-style: circle;
 }
-section li ul > li{
+#main li ul > li{
     list-style: square;
 }
-section ol > li{
+#main ol > li{
     list-style-type: decimal;
 }
 
