@@ -16,6 +16,7 @@ any '/' => sub {
         my $reader = $file->open('<:utf8');
         while (my $line = $reader->getline){
             if ( $line =~ /^#/ ){
+                $line =~ s/\n.+//ms;
                 $line =~ s/^[\s#]+//;
                 $line =~ s/[\s#]+$//;
                 $title = $line;
