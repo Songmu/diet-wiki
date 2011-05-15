@@ -2,14 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>[% title || 'DietWiki' %]</title>
-    <meta http-equiv="Content-Style-Type" content="text/css" />  
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />  
+    <title>[% title || 'Diet Columns' %]</title>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"]]>
     <meta name="format-detection" content="telephone=no" />
-    <link href="[% uri_for('/static/css/blueprint/screen.css') %]" rel="stylesheet" type="text/css" media="screen" />
-    <link href="[% uri_for('/static/css/blueprint/print.css') %]" rel="stylesheet" type="text/css" media="print" />
-    <!--[if lt IE 8]><link rel="stylesheet" href="[% uri_for('/static/css/blueprint/ie.css') %]" type="text/css" media="screen, projection"><![endif]--> 
     <link href="[% uri_for('/static/css/main.css') %]" rel="stylesheet" type="text/css" media="screen" />
     <script src="[% uri_for('/static/js/jquery-1.5.1.min.js') %]"></script>
     <!--[if lt IE 9]>
@@ -19,7 +16,7 @@
 <body[% IF bodyID %] class="[% bodyID %]"[% END %]>
     <div class="container">
         <header>
-            <a href="[% uri_for('/') %]">DietWiki</a>
+            <a href="[% uri_for('/') %]">Diet Columns</a>
         </header>
         <div id="main">
             [% content %]

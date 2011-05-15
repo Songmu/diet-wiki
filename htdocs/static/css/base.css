@@ -1,0 +1,271 @@
+body{
+    font-size: 88%;
+    width: 50em;
+    min-width: 600px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav, header{ display: block;}
+
+header h1 span{
+    font-size: 66%;
+    font-weight: normal;
+}
+
+header nav ul{
+    margin-top: -5px;
+    border-bottom: 1px solid #ccc;
+}
+
+header nav li{
+    display: inline-block;
+    width: 71px;
+    height: 55px;
+    text-align: center;
+    margin: 0 3px;
+    *display: inline;
+    zoom: 1;
+}
+
+header nav li a{
+    background-image: url('../img/postit.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding-top: 30px;
+    height: 25px;
+    vertical-align: bottom;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: #FFF;
+}
+header nav li a:visited, header nav li a:link{
+    color: #FFF;
+}
+header nav li a:hover{
+    background-image: url('../img/postit_ani.png');
+    color: #FF0;
+}
+
+
+section {
+    display: block;
+}
+
+p{
+   margin: .7em 0;
+}
+
+
+footer{
+    display: block;
+}
+
+footer address{
+    float: right;
+    zoom: 1;
+}
+
+footer ul{
+    clear: both;
+    border-top: 1px solid #666;
+    padding-top: 3px;
+    list-style-type: none;
+}
+footer li{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    *display: inline;
+    zoom: 1;
+}
+footer li a{
+    display: inline-block;
+    margin-left: 10px;
+    padding-left: 27px;
+    height: 25px;
+    background-image: url('../img/pin.png');
+    background-repeat: no-repeat;
+    *display: inline;
+    zoom: 1;
+}
+
+
+
+#copyright{
+    text-align: center;
+}
+
+article{
+    display: block;
+}
+
+.entry{
+    padding-left: 40px;
+    background-image: url('../img/looseleaf.png');
+    background-repeat: repeat-y;
+}
+
+.entry pre{
+    margin: .5em 0;
+    font-size: 105%;
+}
+
+.entry h2{
+    border-left: 3px solid #00F;
+    background-color: #ddf;
+    text-indent: .2em;
+    margin: .3em 0 .1em 0;
+}
+
+.entry h3{
+    margin-top: 0.8em;
+    border-bottom: 1px solid #00F;
+    line-height: 1.1;
+}
+.entry h4{
+    margin-top: .6em;
+    border-bottom: 1px dashed #99c;
+}
+.entry h5{
+    text-indent: 0.5em;
+    border-left: 2px solid #99C;
+}
+
+.entry aside{
+    padding: 17px 28px 0 5px;
+    margin-left: 5px;
+    display: block;
+    background-image: url('../img/gem_clip.gif');
+    background-repeat: no-repeat;
+    background-position: right top;
+    font-size: 85%;
+    border-left: 1px dashed #99C;
+    border-bottom: 1px dashed #99C;
+}
+
+
+blockquote{
+    background-image: url('../img/quoteclip.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    border-left: 0;
+}
+blockquote p{
+    margin-left: 10px;
+}
+
+dt{
+    text-decoration: underline;
+}
+dd{
+    margin-left: 1em;
+}
+table{
+    margin: .3em 0;
+    border-color: black;
+}
+th,td{
+    vertical-align: top;
+    border-color: black;
+}
+
+dl.bbs{
+    margin-top: 15px;
+}
+dl.bbs dt{
+    border-top: 1px solid #006;;
+    text-decoration: none;
+}
+
+
+
+section li{
+    margin-left: 1.5em;
+    padding-left: 0;
+}
+section ul > li{
+    list-style: circle;
+}
+section li ul > li{
+    list-style: square;
+}
+section ol > li{
+    list-style-type: decimal;
+}
+
+
+hr.newpage{
+    page-break-before: always;
+    clear: both;
+    visibility: hidden;
+    height: .1px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#toc{
+    background-image: url('../img/toc_back.png');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+#toc li{
+    list-style-position: inside;
+    list-style-type: circle;
+    margin: 0;
+}
+#toc li.toch2{
+
+}
+#toc li.toch3{
+    padding-left: 1em;
+}
+#toc li.toch4{
+    padding-left: 2em;
+}
+#toc li.toch5{
+    padding-left: 3em;
+}
+#toc li.toch6{
+    padding-left: 4em;
+}
+
+a.footnote{
+    text-decoration: none;
+    color: inherit;
+    vertical-align: super;
+    font-size: 70%;
+}
+ol.footnotes{
+    background-image: url('../img/tape.png');
+    background-repeat: no-repeat;
+    padding-top: 55px;
+    padding-left: 10px;
+}
+ol.footnotes li{
+    font-size: 90%;
+}
+ol.footnotes li a{
+    margin-right: .5em;
+}
+
+a[href^=http]:after, a[href^=https]:after{
+    content: url('../img/icon_external.gif');
+    vertical-align: middle;
+    margin: 0 2px;
+}
+
+a[href^="http://localhost/"]:after{
+    content: "";
+    margin: 0;
+}
+
+.samples li{
+    position: relative;
+    margin: .2em;
+    border-bottom: 1px dotted #99C;
+}
+
+

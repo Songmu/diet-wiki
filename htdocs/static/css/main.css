@@ -1,23 +1,5 @@
-header {
-    height: 50px;
-    font-size: 36px;
-    padding: 2px;
-    text-align: center; }
-    header a {
-        color: black;
-        font-weight: bold;
-        text-decoration: none; }
-
-footer {
-    text-align: right;
-    padding-right: 10px;
-    padding-top: 2px; }
-    footer a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-    }
-
-/* smart phones */
-@media screen and (max-device-width: 480px) {
-}
+@charset 'UTF-8';
+@import url('reset.css');
+@import url('base.css');
+@import url('prettify.css');
+@import url('print.css') print;

@@ -1,6 +1,6 @@
 [% WRAPPER 'include/layout.tt' %]
 
-<div>
+<div class="entry">
 [% mkdn %]
 </div>
 
