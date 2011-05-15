@@ -8,6 +8,10 @@ use Time::Piece;
 use Text::MultiMarkdown qw/markdown/;
 
 any '/' => sub {
+    shift->render('index.tt');
+};
+
+any '/list' => sub {
     my ($c) = @_;
     my $mkdn_dir = dir($c->base_dir, 'tmpl', 'mkdn');
     my @entries;
@@ -27,16 +31,16 @@ any '/' => sub {
         $path =~ s/\.mkdn$//;
         push @entries,{
             title => $title,
-            path  => $path,
+            path  => '/entry/'.$path,
             mtime => localtime($file->stat->mtime).'',
         };
     }
-    $c->render('index.tt',{
+    $c->render('list.tt',{
         entries => \@entries,
     });
 };
 
-any '/:entry' => sub {
+any '/entry/:entry' => sub {
     my ($c, $args) = @_;
     return $c->res_404 if $args->{entry} =~ /[^-_0-9a-zA-Z]/;
     my $mkdn_file = File::Spec->catfile($c->base_dir, 'tmpl', 'mkdn', $args->{entry}.'.mkdn');

@@ -1,11 +1,5 @@
 [% WRAPPER 'include/layout.tt' %]
 
-
-<ul class="entries">
-[% FOREACH entry IN entries -%]
-<li><a href="[% entry.path %]">[% entry.title %] ([% entry.mtime %])</a></li>
-[% END -%]
-</ul>
-
+<p><a href="list">エントリ一覧</a></p>
 
 [% END %]
