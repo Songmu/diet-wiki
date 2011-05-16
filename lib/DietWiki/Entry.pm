@@ -34,8 +34,9 @@ sub headers {
     my ($self, $key) = @_;
     $self->{headers} = YAML::Load($self->{header_raw}) if !$self->{headers} && $self->{header_raw};
     $self->{headers} ||= {};
-    if ($key && ref $self->{headers} eq 'HASH'){
-        return $self->{headers}{$key};
+    if (defined $key){
+        return $self->{headers}{$key} if ref $self->{headers} eq 'HASH';
+        return ();
     }
     else{
         return $self->{headers};
