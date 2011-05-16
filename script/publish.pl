@@ -60,6 +60,6 @@ my $feed = XML::FeedPP::Atom::Atom10->new(
 $feed->add_item(%$_) for @entries;
 $feed->sort_item;
 
-open my $xml_fh,'>:utf8',$c->base_dir . '/htdocs/static/atom.xml' or die "$!";
+open my $xml_fh,'>:utf8',$c->base_dir . '/htdocs/atom.xml' or die "$!";
 print $xml_fh $feed->to_string;
 
