@@ -53,6 +53,7 @@ $tag_uri->date($gm_now->strftime('%Y-%m-%d'));
 my $feed = XML::FeedPP::Atom::Atom10->new(
     link    => $url_root,
     author  => 'Masayuki Matsuki',
+    title   => 'いいか、覚えておくといい。ダイエットには王道しかない',
     pubDate => $gm_now->epoch,
     id      => $tag_uri->as_string,
 );
