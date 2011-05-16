@@ -25,6 +25,27 @@ any '/list' => sub {
             title => $entry->title,
             path  => '/entry/'.$path,
             mtime => localtime($file->stat->mtime).'',
+        } unless $entry->headers('draft');
+    }
+    $c->render('list.tt',{
+        entries => \@entries,
+    });
+};
+
+any '/list_all' => sub {
+    my ($c) = @_;
+    my $mkdn_dir = dir($c->base_dir, 'tmpl', 'mkdn');
+    my @entries;
+    for my $file ( sort { $b->stat->mtime <=> $a->stat->mtime } grep { -f $_ && $_ =~ /\.mkdn$/ } $mkdn_dir->children ){
+        my $title = 'unknown';
+
+        my $entry = DietWiki::Entry->new($file->absolute);
+        my $path = $file->basename;
+        $path =~ s/\.mkdn$//;
+        push @entries,{
+            title => $entry->title,
+            path  => '/entry/'.$path,
+            mtime => localtime($file->stat->mtime).'',
         };
     }
     $c->render('list.tt',{
