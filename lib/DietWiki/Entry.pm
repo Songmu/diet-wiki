@@ -60,9 +60,8 @@ sub title {
 
 sub _parse_content {
     my $self = shift;
-    my ($header, $body) = split /\n---\n/ms, $self->{content_raw}, 2;
+    my ($header, $body) = split /^---\n/ms, $self->{content_raw}, 2;
     ($header, $body) = ('', $header) unless $body;
-    $header .= "\n" if $header;
 
     $self->{body}   = $body;
     $self->{header_raw} = $header;
