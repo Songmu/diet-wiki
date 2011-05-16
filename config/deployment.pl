@@ -1,10 +1,3 @@
 +{
-    'DBI' => [
-        'dbi:SQLite:dbname=deployment.db',
-        '',
-        '',
-        +{
-            sqlite_unicode => 1,
-        }
-    ],
+    FQDN    => 'dietcolumn.songmu.dotcloud.com',
 };
